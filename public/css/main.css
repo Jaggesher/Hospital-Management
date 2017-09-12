@@ -81,6 +81,17 @@ header .navbar-default .navbar-brand:hover{
   border-radius: 10px;
 }
 
+@media (max-width: 768px)
+{
+  header{
+    height: 200px;
+  }
+  .pull-right{
+    float: left;
+  }
+}
+
+
 /*Second Navbar Design*/
 .my-nav{
   background: white;
@@ -144,11 +155,10 @@ header .navbar-default .navbar-brand:hover{
   display:inline-block;
 }
 
-.dropdown-menu>li>a {
-  background-color: #197CC1
- 
+.customizeNavbarHeader .navbar-brand{
+  font-size: 15px;
+  padding: auto 20px;
 }
-
 
 .main-class1{
 	

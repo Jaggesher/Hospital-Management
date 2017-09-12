@@ -1,20 +1,33 @@
 <header>
     <nav class="navbar navbar-default head-nav">
         <div class="container-fluid">
-            <div class="collapse navbar-collapse">
-                <div class = "navbar-header">
+            <div>
+                <div class = "navbar-header pull left">
                     <a class = "navbar-brand">
                         Patient Management System
                     </a>
                 </div>
                 <!--right navigation start -->
-                <ul class="nav navbar-nav navbar-right head-menu">
-                    <li class="Admin"><a href="/">Add Doctor</a></li>
-                    <li class="LogIn"><a href="">Log In</a></li>
-                    <li class="LogOut"><a href="">Log Out</a></li>
-                </ul> <!--right navigation ends -->
+                <div class="navbar-header pull-right customizeNavbarHeader">
+                    <a class = "navbar-brand" href="#">Add Doctor</a>
+                    <a class = "navbar-brand" href="#">Log In</a>
+                    <a class = "navbar-brand" href="#">Log Out</a>
+                </div> <!--right navigation ends -->
             </div>
         </div>
+        <script>
+            $(document).load($(window).bind("resize", checkPosition));
+            function checkPosition()
+            {
+                  if ($(window).width() <= 768){	
+                    $(".customizeNavbarHeader").removeClass("pull-right").addClass("pull-left");
+                }
+                else{
+                     $(".customizeNavbarHeader").removeClass("pull-left").addClass("pull-right");
+                }
+
+            }
+        </script>
     </nav>
 </header>
 
