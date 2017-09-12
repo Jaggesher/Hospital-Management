@@ -50,25 +50,66 @@ footer{
 .navbar-brand{
 
 }
-/*Navbar Design*/
-.my-nav{
-  background: #4395f4;
+header{
+  height: 100px;
+  background: #197CC1;
+  position: relative;
+}
+.head-nav{
+  position: absolute;
+  background: #197CC1;
   border-radius: 0;
   border: 0;
   margin: 0;
+  top: 25%;
+  width: 100%;
 }
-
-.my-nav .my-menu li a {
+.head-nav .head-menu li a {
   color: white;
   font-family: 'Ropa Sans', sans-serif;
-  font-size: 15px;
+  font-size: 18px;
+}
+header .navbar-default .navbar-brand{
+  color: white;
+}
+header .navbar-default .navbar-brand:hover{
+  color: white;
+}
+
+.head-nav .head-menu li a:hover,a:focus{
+  color: gainsboro;
+  border-radius: 10px;
+}
+
+/*Second Navbar Design*/
+.my-nav{
+  background: white;
+  border-radius: 0;
+  border: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+.my-nav ul{
+  padding: 27px 0 20px 0;
+}
+
+#fullNavbar li> *{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.my-nav .my-menu li a {
+  color: black;
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 16px;
+ 
 }
 
 .my-nav .my-menu li a:hover,a:focus{
-  background: #317cd3;
-  color: white;
-  font-size: 110%;
-  border-radius: 10px;
+  background: whitesmoke;
+  color: #197CC1;
 }
 
 .my-nav .my-menu .dropdown .dropdown-menu{
@@ -78,59 +119,34 @@ footer{
 }
 
 .my-nav .my-menu .dropdown li a:hover{
-  background: #317cd3;
+  background: #197CC1;
   border-radius: 10px;
   color:white;
 }
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
-  color: White;
-  background-color: #317cd3;
+  color: black;
+  background-color: white;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-   background-color: white;
+   background-color: black;
 }
 
-@media (max-width: 767px)
-{
-  .navbar-default .navbar-nav .open .dropdown-menu>li>a {
-      color: white;
-  }
-
-  .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{
-      color: White;
-       background-color: #317cd3;
-  }
+.secondNav .navbar-nav {
+  width: 100%;
+  text-align: center;
 }
-@media (max-width: 850px)  {
-  .navbar-collapse.collapse {
-      display: none !important;
-  }
-  .navbar-collapse.collapse.in {
-      display: block !important;
-  }
-  .navbar-header .collapse, .navbar-toggle {
-      display:block !important;
-  }
-  .navbar-header {
-      float:none;
-  }
+.secondNav .navbar-nav>li {
+  float: initial;
+}
+.secondNav .nav>li {
+  display:inline-block;
 }
 
-@media (max-width: 850px)  {
-  .navbar-collapse.collapse {
-      display: none !important;
-  }
-  .navbar-collapse.collapse.in {
-      display: block !important;
-  }
-  .navbar-header .collapse, .navbar-toggle {
-      display:block !important;
-  }
-  .navbar-header {
-      float:none;
-  }
+.dropdown-menu>li>a {
+  background-color: #197CC1
+ 
 }
 
 

@@ -12,6 +12,7 @@
         <div id="ContentOfBody" class="container">
             @yield('ContentOfBody')
             <div class="row">
+                <h1>IAmMonmoy</h1>
             </div>
         </div>
         <div class="container">
