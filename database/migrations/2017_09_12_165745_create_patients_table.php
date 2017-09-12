@@ -22,6 +22,7 @@ class CreatePatientsTable extends Migration
             $table->unsignedInteger('age')->nullable(false);
             $table->string('phone', 11)->nullable(false);
             $table->string('password')->nullable(false);
+            $table->string('img', 50)->nullable(false)->default("image/patient.jpg");
             $table->rememberToken();
             $table->timestamps();
         });
