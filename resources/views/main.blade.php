@@ -17,7 +17,7 @@
     </head>
 
     <body>
-        @include('partials.BasicPartials._navigatio')
+        @include('partials.BasicPartials._navigation')
         <hr>
 
         <div id="ContentOfBody" class="container">
