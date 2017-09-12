@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('main');
 });
+
+// Doctors Route
+
+Route::get('/add_doctor',function(){
+	return view('doctor.add-doctor');
+});
