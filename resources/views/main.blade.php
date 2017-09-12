@@ -8,12 +8,10 @@
 
     <body>
         @include('partials.BasicPartials._navigation')
-        <hr>
 
         <div id="ContentOfBody" class="container">
             @yield('ContentOfBody')
             <div class="row">
-               
             </div>
         </div>
         <div class="container">
