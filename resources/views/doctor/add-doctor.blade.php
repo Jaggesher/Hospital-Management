@@ -20,7 +20,7 @@
 	    </div>
 	    <br>
 	    <br>
-    	<div class="col-sm-9 col-sm-offset-1">
+    	<div class="col-sm-8 col-sm-offset-2">
 	    	<div class="jumbotron">
 	    		<form class="form-horizontal" role="form" method="post" action="#">
 					<input type="hidden" name="_token" value="{{csrf_token()}}">
