@@ -16,38 +16,38 @@
 	{{-- Main Profile View --}}
     <div class="container">
         <div class=" col-sm-12 pro_head clearfix">
-        <h2 class="pull-left"> <strong>Rakuls's</strong> Profile</h2>
+        <h2 class="pull-left"> <strong>{{ $Personal->fname}}'s</strong> Profile</h2>
       <h2 class="pull-right">
         <a href="#" data-toggle="tooltip" data-placement="bottom" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
       </h2> 
         </div>
         <div class="col-sm-2"></div>
         <div class="col-sm-3" align="center"> 
-            <img src="{{ asset("image/RakulPreet.jpg") }}" class="img-thumbnail" alt="Profile Pic" width="200" height="200">
-            <p class="cls_phn_num"> <span class="glyphicon glyphicon-phone-alt" style="color: #357ed3;"></span>01915770274</p>
+            <img src="{{ asset($Personal->img) }}" class="img-thumbnail" alt="Profile Pic" width="200" height="200">
+            <p class="cls_phn_num"> <span class="glyphicon glyphicon-phone-alt" style="color: #357ed3;"></span>{{$Personal->phone}}</p>
         </div>
         <div class="col-sm-6 pro-info">
         <table class="table info_table">
               <tbody>
                 <tr>
                   <td><strong>Name:</strong></td>
-                  <td> <strong>Rakul Preet Sing</strong></td>
+                  <td> <strong>{{$Personal->fname.' '.$Personal->lname}}</strong></td>
                 </tr>
                 <tr>
                   <td>Gender:</td>
-                  <td>Female</td>
+                  <td>{{$Personal->gender}}</td>
                 </tr>
                 <tr>
                   <td>Email:</td>
-                  <td>rakul14@gmail.com</td>
+                  <td>{{$Personal->email}}</td>
                 </tr>
                 <tr>
                   <td>Age:</td>
-                  <td>22</td>
+                  <td>{{$Personal->age}}</td>
                 </tr>
                 <tr>
                   <td>Mobile:</td>
-                  <td>01915770274</td>
+                  <td>{{$Personal->phone}}</td>
                 </tr>
               </tbody>
             </table>

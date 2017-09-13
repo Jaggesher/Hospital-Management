@@ -34,9 +34,7 @@ Route::get('/doctors',function(){
 });
 
 //Patients Route
-Route::get('/show_patient',function(){
-	return view('patient.view-patient');
-});
+Route::get('/show_patient','patientController@Show')->name('patient.Profile');
 
 Route::get('/edit_patient',function(){
 	return view('patient.edit-patient');
