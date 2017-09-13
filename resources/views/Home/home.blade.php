@@ -37,7 +37,7 @@
     <hr>
     <div class="contain">
         <div class="row">
-            <div class="col-md-offset-2 col-md-2">
+            <div class="col-sm-3">
                 <div class="card">
                     <img src="{{ asset('img/1.jpg') }}" alt="Image">
                     <div class="contain">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>  
-            <div class="col-md-2">
+            <div class="col-sm-3">
                 <div class="card">
                     <img src="{{ asset('img/1.jpg') }}" alt="Image">
                     <div class="contain">
@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-sm-3">
                 <div class="card">
                     <img src="{{ asset('img/1.jpg') }}" alt="Image">
                     <div class="contain">
@@ -68,7 +68,7 @@
                 </div>
             </div>
 
-               <div class="col-md-2">
+               <div class="col-sm-3">
                     <div class="card">
                         <img src="{{ asset('img/1.jpg') }}" alt="Image">
                         <div class="contain">
