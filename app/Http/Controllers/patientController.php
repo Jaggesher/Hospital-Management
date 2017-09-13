@@ -29,6 +29,25 @@ class patientController extends Controller
 
     public function UpdateInfo(Request $request){
 
+        $this->validate($request,[
+            'fname' => 'required|string|max:20',
+            'lname' => 'required|string|max:20',
+            'gender' => 'required|string',
+            'phone' => 'required|numeric',
+            'age' => 'required|integer',
+        ]);
+
+        $id=Auth::user()->id;
+        $dbVar=User::find($id);
+        $dbVar->fname=$request['fname'];
+        $dbVar->lname=$request['lname'];
+        $dbVar->gender=$request['gender'];
+        $dbVar->phone=$request['phone'];
+        $dbVar->age=$request['age'];
+       
+        $dbVar->save();
+        
+        return redirect()->route('patient.Profile');
     }
 
     public function UpdatePassword(Request $request){

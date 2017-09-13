@@ -77,9 +77,95 @@
                   <input type="hidden" name="_token" value="{{csrf_token()}}">
 
 
-                  {{-- Other Code --}}
+                 <div class="form-group{{ $errors->has('fname') ? ' has-error' : '' }}">
+                    <label for="fname" class="col-md-3 control-label"> First Name</label>
+
+                    <div class="col-md-8">
+                        <input id="fname" type="text" class="form-control" name="fname" value="{{ $Personal->fname }}" required autofocus>
+
+                        @if ($errors->has('fname'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('fname') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('lname') ? ' has-error' : '' }}">
+                    <label for="lname" class="col-md-3 control-label">Last Name</label>
+
+                    <div class="col-md-8">
+                        <input id="lname" type="text" class="form-control" name="lname" value="{{ $Personal->lname}}" required >
+
+                        @if ($errors->has('lname'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('lname') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group{{-- {{ $errors->has('email') ? ' has-error' : '' }} --}}">
+                    <label for="email" class="col-md-3 control-label">E-Mail Address</label>
+
+                    <div class="col-md-8">
+                        <input id="email" type="email" class="form-control" name="email" value="{{ $Personal->email }}" readonly>
+
+                        {{-- @if ($errors->has('email'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif --}}
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
+
+                    <label for="gender" class="col-md-3 control-label">Gender</label>
+
+                    <div class="col-md-8">
+                        <select class="form-control" id="gender" name="gender">
+                            <option value="Male" @if( $Personal->gender=="Male") selected @endif>Male</option>
+                            <option value="Female"  @if( $Personal->gender=="Female") selected @endif >Female</option>
+                            <option value="Other"  @if( $Personal->gender=="Other") selected @endif >Other</option>
+                        </select>
+                    </div>
+
+                    @if ($errors->has('gender'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('gender') }}</strong>
+                        </span>
+                      @endif
+                </div>
 
 
+                <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                    <label for="phone" class="col-md-3 control-label">Mobile</label>
+
+                    <div class="col-md-8">
+                        <input id="phone" type="text" class="form-control" name="phone" value="{{  $Personal->phone }}" required >
+
+                        @if ($errors->has('phone'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('phone') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('age') ? ' has-error' : '' }}">
+                    <label for="age" class="col-md-3 control-label">Age</label>
+
+                    <div class="col-md-8">
+                        <input id="age" type="number" min="0" max="200" class="form-control" name="age" value="{{  $Personal->age }}" required >
+
+                        @if ($errors->has('age'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('age') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
                   <div class="form-group">
                     <label class="col-md-3 control-label"></label>
                     <div class="col-md-8">
