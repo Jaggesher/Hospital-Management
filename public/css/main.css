@@ -211,6 +211,11 @@ header .navbar-default .top-menu:hover{
   padding: 0px 5px;
 }
 
+.card p{
+  text-align: justify;
+  text-justify: inter-word;
+ /* font-family: Arial, Helvetica, sans-serif;*/
+}
 /* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 10px 10px 5px #888888;
