@@ -32,3 +32,9 @@ Route::get('/edit_doc',function(){
 Route::get('/doctors',function(){
 	return view('doctor.doctors');
 });
+
+//Patients Route
+Route::get('/show_patient',function(){
+	return view('patient.view-patient');
+});
+
