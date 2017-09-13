@@ -53,7 +53,7 @@
 	                    <div class="form-group">
 		                    <label class="col-lg-3 control-label">description:</label>
 		                    <div class="col-lg-8">
-		                      <textarea class="form-control" rows="8" placeholder="About Doctor." name="description" ></textarea>
+		                      <textarea class="form-control" rows="8" placeholder="About Doctor." name="description" required></textarea>
 		                    </div>
 	                    </div>
 
