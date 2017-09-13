@@ -26,8 +26,10 @@
             <img src="{{ asset($Personal->img) }}" class="img-thumbnail" alt="Profile Pic" width="200" height="200">
             <p class="cls_phn_num"> <span class="glyphicon glyphicon-phone-alt" style="color: #357ed3;"></span>{{$Personal->phone}}</p>
         </div>
-        <div class="col-sm-6 pro-info">
-        <table class="table info_table">
+        <div class="col-sm-6 ">
+
+          <div class="pro-info">
+            <table class="table info_table">
               <tbody>
                 <tr>
                   <td><strong>Name:</strong></td>
@@ -51,6 +53,7 @@
                 </tr>
               </tbody>
             </table>
+          </div>
         </div>
     </div>
 
