@@ -28,3 +28,7 @@ Route::get('/show_doc',function(){
 Route::get('/edit_doc',function(){
 	return view('doctor.edit-doctor');
 });
+
+Route::get('/doctors',function(){
+	return view('doctor.doctors');
+});
