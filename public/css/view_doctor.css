@@ -58,7 +58,7 @@
 }
 
 .info_table tbody tr {
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 
 .info_table td:first-child {color:#357ed3; max-width: 60px; text-align: left;}
@@ -73,10 +73,13 @@
 
 .doc-desc-cls{
 	padding: 0px 5px 5px 5px;
+	border-top: 1px solid gray;
 }
 .doc-desc-cls h1{
 	color:#357ed3; 
 }
+
+
 /*Here Contest Log Style Start*/
 .contest_table{
 	margin-bottom: 20px;
@@ -138,7 +141,7 @@
 	.info_table{
     	font-size: 16px;
     }
-    .pro-info{
-    	height: 250px;
+    .doc-description{
+    	font-size: 14px;
     }
 }
