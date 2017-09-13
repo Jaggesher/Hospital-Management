@@ -18,7 +18,7 @@
         <div class=" col-sm-12 pro_head clearfix">
         <h2 class="pull-left"> <strong>{{ $Personal->fname}}'s</strong> Profile</h2>
       <h2 class="pull-right">
-        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+        <a href="{{ route('patient.edit')}}" data-toggle="tooltip" data-placement="bottom" title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
       </h2> 
         </div>
         <div class="col-sm-2"></div>

@@ -21,8 +21,8 @@
 
     <div class="col-sm-4 pro_image" align="center">
         <h4>Current Profile Picture.</h4>
-        <img  id="ProPicUp" src="{{ asset("image/RakulPreet.jpg") }}" class="img-thumbnail clearfix" alt="Profile Pic" width="200" height="200">
-        <form action="{{-- {{route('savePicture')}} --}}" method="post" enctype="multipart/form-data">
+        <img  id="ProPicUp" src="{{ asset($Personal->img) }}" class="img-thumbnail clearfix" alt="Profile Pic" width="200" height="200">
+        <form action="{{route('patient.savePicture')}}" method="post" enctype="multipart/form-data">
              <input type="hidden" name="_token" value="{{csrf_token()}}">
             <div class="form-group">
                 <input type="file" name="fileToUpload" id="fileToUpload" class="file" accept="image/jpg, image/jpeg, image/png" required>
@@ -39,7 +39,7 @@
           <button id="SavePropic" class="btn btn-primary " type="submit" style="width:220px;"><i class="glyphicon glyphicon-ok-sign"></i> Set as Profile</button>
         </form>
        
-         {{--  @if ($errors->has('fileToUpload'))
+          @if ($errors->has('fileToUpload'))
             <div class="alert alert-danger">
               <span class="help-block">
                   <strong>{{ $errors->first('fileToUpload') }}</strong>
@@ -52,7 +52,7 @@
                 <strong> {{ Session::get('wrong') }}</strong>
               </span>
             </div>
-          @endif --}}
+          @endif
         
     </div>
 
