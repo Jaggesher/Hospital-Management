@@ -1,3 +1,4 @@
+
 #ContentOfBody{
   bottom: 0;
   left: 0;
@@ -65,15 +66,15 @@ header{
   width: 100%;
 }
 .head-nav .head-menu li a {
-  color: white;
+  color: #e0e1e2;
   font-family: 'Ropa Sans', sans-serif;
   font-size: 18px;
 }
 header .navbar-default .navbar-brand{
-  color: white;
+  color: #e0e1e2;
 }
 header .navbar-default .navbar-brand:hover{
-  color: white;
+  color: #e0e1e2;
 }
 
 .head-nav .head-menu li a:hover,a:focus{
@@ -94,7 +95,7 @@ header .navbar-default .navbar-brand:hover{
 
 /*Second Navbar Design*/
 .my-nav{
-  background: white;
+  background: #e0e1e2;
   border-radius: 0;
   border: 0;
   margin: 0;
@@ -119,25 +120,25 @@ header .navbar-default .navbar-brand:hover{
 }
 
 .my-nav .my-menu li a:hover,a:focus{
-  background: whitesmoke;
+  background: #e0e1e2;
   color: #197CC1;
 }
 
 .my-nav .my-menu .dropdown .dropdown-menu{
   background: #4395f4;
-  color: white;
+  color: #e0e1e2;
  
 }
 
 .my-nav .my-menu .dropdown li a:hover{
   background: #197CC1;
   border-radius: 10px;
-  color:white;
+  color:#e0e1e2;
 }
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
   color: black;
-  background-color: white;
+  background-color: #e0e1e2;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -159,7 +160,10 @@ header .navbar-default .navbar-brand:hover{
   font-size: 15px;
   padding: auto 20px;
 }
-
+/*Carousel*/
+.item{
+  min-width: 100%;
+}
 .main-class1{
 	
 }
