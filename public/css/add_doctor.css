@@ -12,6 +12,10 @@
 	font-size: 30px;
 }
 
+textarea {
+    resize: none;
+}
+
 /*Media query Section.*/
 
 @media (max-width: 768px) {

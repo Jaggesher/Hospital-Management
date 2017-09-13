@@ -20,8 +20,7 @@ class CreateDoctorsTable extends Migration
             $table->string('category',150)->nullable(false);
             $table->text('description')->nullable(false);
             $table->unsignedInteger('Money')->nullable(false);
-            $table->unsignedSmallInteger(' Office')->nullable(false);
-            $table->string('duty_days')->nullable(false);
+            $table->string('Office',11)->nullable(false);
             $table->time('duty_time')->nullable(false);
             $table->string('img', 50)->nullable(false)->default("image/doctor.jpg");
             $table->timestamps();
