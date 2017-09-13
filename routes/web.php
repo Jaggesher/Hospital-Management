@@ -35,11 +35,10 @@ Route::get('/doctors',function(){
 
 //Patients Route
 Route::get('/show_patient','patientController@Show')->name('patient.Profile');
-
-Route::get('/edit_patient',function(){
-	return view('patient.edit-patient');
-});
-
+Route::get('/edit_patient','patientController@ShowEdit')->name('patient.edit');
+Route::post('/edit_patient','patientController@UpdateInfo')->name('patient.edit.submit');
+Route::post('change_password','patientController@UpdatePassword')->name('patient.change_password.submit');
+Route::post('patient_pic','patientController@StorePic')->name('patient.savePicture');
 
 Auth::routes();
 
