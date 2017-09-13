@@ -164,6 +164,28 @@ header .navbar-default .navbar-brand:hover{
 .item{
   min-width: 100%;
 }
+.img-responsive{
+  background-attachment: fixed;
+}
+@media (min-width: 768px) { 
+  .carousel-inner{
+    width:100%;
+    max-height: 300px !important;
+  }
+ }
+@media (min-width: 992px) { 
+  .carousel-inner{
+    width:100%;
+    max-height: 500px !important;
+  }
+ }
+
+@media (min-width: 1200px) { 
+  .carousel-inner{
+    width:100%;
+    max-height: 700px !important;
+  }
+ }
 .main-class1{
 	
 }

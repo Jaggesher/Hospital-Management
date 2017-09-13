@@ -20,15 +20,15 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="{{asset('img/1.jpg')}}" alt="image1" style="width:100%;">
+                    <img class= "img-responsive" src="{{asset('img/1.jpg')}}" alt="image1" style="width:100%;">
                 </div>
 
                 <div class="item">
-                    <img src="{{asset('img/2.jpg')}}" alt="image2" style="width:100%;">
+                    <img class= "img-responsive" src="{{asset('img/2.jpg')}}" alt="image2" style="width:100%;">
                 </div>
                 
                 <div class="item">
-                    <img src="{{asset('img/3.jpg')}}" alt="image2" style="width:100%;">
+                    <img class= "img-responsive" src="{{asset('img/3.jpg')}}" alt="image2" style="width:100%;">
                 </div>
             </div>
 
@@ -47,6 +47,7 @@
         <div id="ContentOfBody" class="container">
             @yield('ContentOfBody')
             <div class="row">
+                <h1>Monmoy</h1>
             </div>
         </div>
 
