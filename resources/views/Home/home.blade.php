@@ -40,7 +40,7 @@
             <div class="col-sm-3">
                 <div class="card">
                     <img src="{{ asset('img/1.jpg') }}" alt="Image">
-                    <div class="contain">
+                    <div class="contains">
                         <h4 class="name">Mister Modu</h4>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat adipisci sit eos dolorum fugiat. Pariatur cupiditate repellat odit assumenda explicabo iusto tempora eaque vitae itaque, aperiam recusandae quibusdam dolores laudantium?</p>
                         <button type="button" class="btn btn-success">Success</button>
@@ -50,7 +50,7 @@
             <div class="col-sm-3">
                 <div class="card">
                     <img src="{{ asset('img/1.jpg') }}" alt="Image">
-                    <div class="contain">
+                    <div class="contains">
                         <h4 class="name">Mister Modu</h4>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat adipisci sit eos dolorum fugiat. Pariatur cupiditate repellat odit assumenda explicabo iusto tempora eaque vitae itaque, aperiam recusandae quibusdam dolores laudantium?</p>
                         <button type="button" class="btn btn-success">Success</button>
@@ -60,7 +60,7 @@
             <div class="col-sm-3">
                 <div class="card">
                     <img src="{{ asset('img/1.jpg') }}" alt="Image">
-                    <div class="contain">
+                    <div class="contains">
                         <h4 class="name">Mister Modu</h4>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat adipisci sit eos dolorum fugiat. Pariatur cupiditate repellat odit assumenda explicabo iusto tempora eaque vitae itaque, aperiam recusandae quibusdam dolores laudantium?</p>
                         <button type="button" class="btn btn-success">Success</button>
@@ -71,7 +71,7 @@
                <div class="col-sm-3">
                     <div class="card">
                         <img src="{{ asset('img/1.jpg') }}" alt="Image">
-                        <div class="contain">
+                        <div class="contains">
                             <h4 class="name">Mister Modu</h4>
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat adipisci sit eos dolorum fugiat. Pariatur cupiditate repellat odit assumenda explicabo iusto tempora eaque vitae itaque, aperiam recusandae quibusdam dolores laudantium?</p>
                             <button type="button" class="btn btn-success">Success</button>
