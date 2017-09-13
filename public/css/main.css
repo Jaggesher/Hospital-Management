@@ -78,6 +78,9 @@ header .navbar-default .navbar-brand{
   padding-left: 45px;
   margin-right: 35px;
 }
+header .navbar-default .navbar-brand:hover{
+  color: #e0e1e2;
+}
 header .navbar-default .top-menu{
   color: #e0e1e2;
   padding:18px;
