@@ -9,9 +9,8 @@
                 </div>
                 <!--right navigation start -->
                 <div class="navbar-header pull-right customizeNavbarHeader">
-                    <a class = "navbar-brand" href="#">Add Doctor</a>
-                    <a class = "navbar-brand" href="#">Log In</a>
-                    <a class = "navbar-brand" href="#">Log Out</a>
+                    <a class = "navbar-brand" href="#">Login</a>
+                    <a class = "navbar-brand" href="#">Logout</a>
                 </div> <!--right navigation ends -->
             </div>
         </div>
@@ -32,7 +31,7 @@
     </nav>
 </header>
 
-    <div class = "secondNav">
+<div class = "secondNav">
     <nav class="navbar navbar-default my-nav">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -53,8 +52,9 @@
                 <!--Left navigation start -->
                 <ul class="nav navbar-nav my-menu">
                     <li class="Home"><i class="fa fa-list-alt"></i><a href="/">Home</a></li>
-                    <li class="Contests"><i class="fa fa-list-alt"></i><a href="">Doctor List</a></li>
-                    <li class="Results"><i class="fa fa-list-alt"></i><a href="">Serial</a></li>
+                    <li class="DoctorList"><i class="fa fa-list-alt"></i><a href="">Doctor List</a></li>
+                    <li class="Serial"><i class="fa fa-list-alt"></i><a href="">Serial</a></li>
+                    <li class="AddDoctor"><i class="fa fa-list-alt"></i><a href="">Add Doctor</a></li>
                 </ul> <!--Left navigation ends -->
             </div>
         </div>
