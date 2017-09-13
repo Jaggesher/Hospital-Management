@@ -211,18 +211,25 @@ header .navbar-default .navbar-brand:hover{
   
 }
 .statement .content h1{
+  font-size: 45px;
   margin:0;
   padding: 0;
+  margin-bottom: 5px;
+}
+.statement .content p{
+  font-size: 18px;
+  font-weight: bold;
 }
 .statement{
-  height: 300px;
+  height: 500px;
   width: 100%;
-  background-color: #e0e1e2;
+  background-image: url('/img/parallex1.jpg');
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-attachment: fixed;
 }
 .statement .content h1 {
-  padding-top: 90px;
+  padding-top: 170px;
 }
 .statement .content p {
   padding: 0px 90px;
