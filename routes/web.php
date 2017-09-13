@@ -42,3 +42,7 @@ Route::get('/edit_patient',function(){
 	return view('patient.edit-patient');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
