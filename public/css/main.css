@@ -75,9 +75,15 @@ header{
 header .navbar-default .navbar-brand{
   color: #e0e1e2;
   padding:18px;
+  padding-left: 45px;
   margin-right: 35px;
 }
-header .navbar-default .navbar-brand:hover{
+header .navbar-default .top-menu{
+  color: #e0e1e2;
+  padding:18px;
+  margin-right: 35px;
+}
+header .navbar-default .top-menu:hover{
   color: black;
   background: white;
   border-radius: 10px;
