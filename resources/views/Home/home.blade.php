@@ -33,5 +33,5 @@
                 <span class="glyphicon glyphicon-chevron-right"></span>
                 <span class="sr-only">Next</span>
             </a>
-        </div>
+    </div>
 @endsection

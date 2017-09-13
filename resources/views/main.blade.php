@@ -12,7 +12,6 @@
         <div id="ContentOfBody" class="container">
             @yield('ContentOfBody')
             <div class="row">
-                <h1>Monmoy</h1>
             </div>
         </div>
 

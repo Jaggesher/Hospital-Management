@@ -186,6 +186,10 @@ header .navbar-default .navbar-brand:hover{
     max-height: 700px !important;
   }
  }
+ .monmoy{
+   height: 500px;
+   background-color: red;
+ }
 .main-class1{
 	
 }
