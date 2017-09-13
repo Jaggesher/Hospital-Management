@@ -67,20 +67,15 @@ header{
   top: 25%;
   width: 100%;
 }
-.head-nav .head-menu li a {
-  color: #e0e1e2;
-  font-family: 'Ropa Sans', sans-serif;
-  font-size: 18px;
-}
+
 header .navbar-default .navbar-brand{
   color: #e0e1e2;
+  padding:18px;
+  margin-right: 35px;
 }
 header .navbar-default .navbar-brand:hover{
-  color: #e0e1e2;
-}
-
-.head-nav .head-menu li a:hover,a:focus{
-  color: gainsboro;
+  color: black;
+  background: white;
   border-radius: 10px;
 }
 
@@ -230,6 +225,9 @@ header .navbar-default .navbar-brand:hover{
   background-image: url('/img/parallex1.jpg');
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 .statement .content h1 {
@@ -240,6 +238,7 @@ header .navbar-default .navbar-brand:hover{
 }
 @media(max-width:640px)
 {
+
   .statement .content h1{
     font-size: 35px;
     margin:0;
