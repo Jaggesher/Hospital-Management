@@ -8,8 +8,7 @@
 
     <body>
         @include('partials.BasicPartials._navigation')
-        @yield('Home')
-        <div id="ContentOfBody" class="container">
+        <div id="ContentOfBody" class="container-fluid">
             @yield('ContentOfBody')
             <div class="row">
             </div>

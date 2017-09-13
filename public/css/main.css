@@ -7,6 +7,10 @@
   top: 0;
   min-height: 100vh;
 }
+.container-fluid{
+  margin: 0px;
+  padding: 0px;
+}
 footer{
 	background-color: #266fba;
 	color: white;

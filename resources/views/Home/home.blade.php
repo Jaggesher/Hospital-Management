@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('Home')
+@section('ContentOfBody')
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
