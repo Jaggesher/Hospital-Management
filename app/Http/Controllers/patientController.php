@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 Use Auth;
+Use Hash;
 
 class patientController extends Controller
 {
@@ -32,6 +33,25 @@ class patientController extends Controller
 
     public function UpdatePassword(Request $request){
 
+        $id=Auth::user()->id;
+        $dbVar=User::find($id);
+        $hashedPassword=$dbVar->password;
+
+        $this->validate($request,[
+            'old_password' => 'required|max:15|min:6',
+            'password' => 'required|max:15|min:6|confirmed',
+        ]);
+
+        if (Hash::check($request->old_password, $hashedPassword)) {
+            $dbVar->password=bcrypt($request['password']);
+            $dbVar->save();
+            return redirect()->route('patient.Profile');
+        }
+
+        //Here just send a flush message for invalid old password
+        $request->session()->flash('no_match', 'Invalid Old Password');
+
+        return redirect()->back();
     }
 
     public function StorePic(Request $request){
