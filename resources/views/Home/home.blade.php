@@ -34,21 +34,10 @@
                 <span class="sr-only">Next</span>
             </a>
     </div>
-
-     <div class="statement">
-        <div>
-            <div class="content">
-                <h1>Patient Management  System</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam atque recusandae, veniam necessitatibus vitae unde. Possimus iste, debitis corporis sed quisquam tempore accusantium. Magni voluptate et quo odio quibusdam obcaecati.
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam atque recusandae, veniam necessitatibus vitae unde. Possimus iste, debitis corporis sed quisquam tempore accusantium. Magni voluptate et quo odio quibusdam obcaecati.
-                </p>
-            </div>
-        </div>
-    </div>
     <hr>
     <div class="contain">
         <div class="row">
-            <div class="col-md-offset-2 col-md-2">
+            <div class="col-sm-3">
                 <div class="card">
                     <img src="{{ asset('img/1.jpg') }}" alt="Image">
                     <div class="contain">
@@ -58,7 +47,7 @@
                     </div>
                 </div>
             </div>  
-            <div class="col-md-2">
+            <div class="col-sm-3">
                 <div class="card">
                     <img src="{{ asset('img/1.jpg') }}" alt="Image">
                     <div class="contain">
@@ -68,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-sm-3">
                 <div class="card">
                     <img src="{{ asset('img/1.jpg') }}" alt="Image">
                     <div class="contain">
@@ -79,7 +68,7 @@
                 </div>
             </div>
 
-               <div class="col-md-2">
+               <div class="col-sm-3">
                     <div class="card">
                         <img src="{{ asset('img/1.jpg') }}" alt="Image">
                         <div class="contain">
@@ -91,7 +80,16 @@
                 </div>
         </div>
     </div>
-
-      
+      <hr>
+     <div class="statement">
+        <div>
+            <div class="content">
+                <h1>Patient Management  System</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam atque recusandae, veniam necessitatibus vitae unde. Possimus iste, debitis corporis sed quisquam tempore accusantium. Magni voluptate et quo odio quibusdam obcaecati.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam atque recusandae, veniam necessitatibus vitae unde. Possimus iste, debitis corporis sed quisquam tempore accusantium. Magni voluptate et quo odio quibusdam obcaecati.
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
