@@ -9,6 +9,7 @@
                 </div>
                 <!--right navigation start -->
                 <div class="navbar-header pull-right customizeNavbarHeader">
+                    <a class = "navbar-brand" href="#">Profile</a>
                     <a class = "navbar-brand" href="#">Login</a>
                     <a class = "navbar-brand" href="#">Logout</a>
                 </div> <!--right navigation ends -->
