@@ -38,3 +38,7 @@ Route::get('/show_patient',function(){
 	return view('patient.view-patient');
 });
 
+Route::get('/edit_patient',function(){
+	return view('patient.edit-patient');
+});
+
