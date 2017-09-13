@@ -16,6 +16,7 @@
             </div>
         </div>
         <script>
+        //This is for responsiveness of navbar
             $(document).load($(window).bind("resize", checkPosition));
             function checkPosition()
             {
@@ -31,7 +32,7 @@
     </nav>
 </header>
 
-<div class = "secondNav">
+    <div class = "secondNav">
     <nav class="navbar navbar-default my-nav">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -59,6 +60,7 @@
         </div>
     </nav>
 </div>
+
 
 
 
