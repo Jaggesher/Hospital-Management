@@ -72,24 +72,24 @@
 			<h2 class="pull-right"><button id="addDateBtn" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button></h2>	
 			</div>
 
-			<div class="col-md-8 col-sm-offset-2" id="addDateBlock">
+			<div class="col-md-8 col-sm-offset-2" id="addDateBlock" @if(count($errors) == 0) style = "display:none;" @endif>
                 <div class="panel panel-default">
                     <div class="panel-heading">Add Another Date.</div>
                     <div class="panel-body">
                     	<p class="alert alert-danger"> <strong>Hey Admin!!!!</strong> <br> &nbsp &nbsp Be serious about the date. Once you add it then it never undo. So you must be over sure about the date.<br>&nbsp&nbsp&nbsp ----Thank You. :) </p>
-                        <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                        <form class="form-horizontal" method="POST" action="{{ route('Doc.Add.Date') }}">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
-             				<input type="hidden" name="id" value="{{$Personal->id}}">
+             				<input type="hidden" name="doctor" value="{{$Personal->id}}">
 
-                            <div class="form-group{{ $errors->has('date') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 control-label">Enter Date</label>
+                            <div class="form-group{{ $errors->has('serial_date') ? ' has-error' : '' }}">
+                                <label for="serial_date" class="col-md-4 control-label">Enter Date</label>
 
                                 <div class="col-md-6">
-                                    <input id="date" type="date" class="form-control" name="date" value="{{ old('date') }}" required autofocus>
+                                    <input id="serial_date" type="date" class="form-control" name="serial_date" value="{{ old('serial_date') }}" required autofocus>
 
-                                    @if ($errors->has('date'))
+                                    @if ($errors->has('serial_date'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('date') }}</strong>
+                                            <strong>{{ $errors->first('serial_date') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -119,23 +119,14 @@
 		      </thead>
 
 		      <tbody>
-		        <tr>
-		          <td>12/08/2017</td>
-		          <td>240</td>
-		          <td><a href="#">Print</a></td>
-		        </tr>
 
-		        <tr>
-		          <td>12/08/2017</td>
-		          <td>240</td>
-		          <td><a href="#">Print</a></td>
-		        </tr>
-
-		        <tr>
-		          <td>12/08/2017</td>
-		          <td>240</td>
-		          <td><a href="#">Print</a></td>
-		        </tr>
+		      	@foreach($Dates as $date)
+		      		 <tr>
+			          <td>{{$date->serial_date}}</td>
+			          <td>n</td>
+			          <td><a href="#"> <span class="glyphicon glyphicon-print"></span></a></td>
+			        </tr>
+		      	@endforeach
 
 		      </tbody>
 

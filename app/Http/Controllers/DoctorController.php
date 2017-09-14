@@ -7,6 +7,7 @@ use Auth;
 use App\Category;
 use App\Doctor;
 use App\User;
+use App\Date;
 
 class DoctorController extends Controller
 {
@@ -19,7 +20,8 @@ class DoctorController extends Controller
     public function ViewDoc($id)
     {
     	$dbVar=Doctor::find($id);
-    	return view('doctor.view-doctor')->with('Personal',$dbVar);
+        $dbVar2=Date::where('doctor',$id)->orderBy('id', 'desc')->get();
+    	return view('doctor.view-doctor')->with('Personal',$dbVar)->with('Dates',$dbVar2);
     }
 
     public function ShowAddDoc(){
@@ -106,8 +108,17 @@ class DoctorController extends Controller
         return redirect()->back();
     }
 
-    public function AddDate($Request $request){
-        
+    public function AddDate(Request $request){
+        $date=date("Y-m-d");
+        $this->validate($request,[
+            'serial_date' => 'required|date|date_format:Y-m-d|after_or_equal:'.$date,
+        ]);
+        $dbVar=new Date();
+        $dbVar->serial_date= $request->serial_date;
+        $dbVar->doctor= $request->doctor;
+        $dbVar->save();
+        return redirect()->route('Doc.View', ['id' => $dbVar->doctor]);
+
     }
 
 }

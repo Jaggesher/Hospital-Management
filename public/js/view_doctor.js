@@ -2,7 +2,7 @@
 
   $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip();
-      $("#addDateBlock").hide();
+      // $("#addDateBlock").hide();
       $('#addDateBtn').click(function(){
       	$("#addDateBlock").animate({
             height: 'toggle'
