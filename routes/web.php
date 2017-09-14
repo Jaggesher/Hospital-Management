@@ -22,6 +22,7 @@ Route::post('/add_doctor','DoctorController@AddDoc')->name('Doc.Add.Submit');
 Route::get('/edit_doctor/{id}','DoctorController@ShowEdit')->where('id' , '[0-9]+')->name('Doc.edit');
 Route::post('/edit_doctor','DoctorController@UpdateInfo')->name('Doc.Edit.Submit');
 Route::post('/Doctor_pic','DoctorController@StorePic')->name('Doc.savePicture');
+Route::post('/add_date','DoctorController@AddDate')->name('Doc.Add.Date');
 
 //Patients Route
 Route::get('/show_patient','patientController@Show')->name('patient.Profile');

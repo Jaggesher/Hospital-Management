@@ -55,6 +55,7 @@ class DoctorController extends Controller
     public function ShowEdit($id){
         $dbVar=Doctor::find($id);
         $dbCat=Category::all();
+        //return $dbVar;
     	return view('doctor.edit-doctor')->with('Personal',$dbVar)->with('Categories',$dbCat);
     }
 
@@ -103,6 +104,10 @@ class DoctorController extends Controller
         $request->session()->flash('wrong', 'Something Went Wrong. Please Try Latter');
 
         return redirect()->back();
+    }
+
+    public function AddDate($Request $request){
+        
     }
 
 }

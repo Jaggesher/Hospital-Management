@@ -96,7 +96,7 @@
                                 <select class="form-control" name="category">
 
                                     @foreach($Categories as $category)
-                                        <option value="{{$category->category}} {{($Personal->category==$category )?'selected':''}}">{{$category->category}}</option>
+                                        <option value="{{$category->category}}" @if($Personal->category==$category->category){{"selected"}} @endif>{{$category->category}}</option>
                                     @endforeach
                                 </select>
                                 @if ($errors->has('category'))
