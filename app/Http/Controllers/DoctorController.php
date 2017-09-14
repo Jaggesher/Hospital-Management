@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\Category;
+use App\Doctor;
+use App\User;
 
 class DoctorController extends Controller
 {
     //
     public function __construct()
     {
-        $this->middleware('auth:admin'['except' => 'ViewDoc']);
+        $this->middleware('auth:admin',['except' => 'ViewDoc']);
     }
 
     public function ViewDoc($id)
@@ -18,11 +22,32 @@ class DoctorController extends Controller
     }
 
     public function ShowAddDoc(){
-    	return view('doctor.add-doctor');
+    	$dbVar=Category::all();
+    	return view('doctor.add-doctor')->with('Categories',$dbVar);
     }
 
     public function AddDoc(Request $request){
-    	return view('doctor.add-doctor');
+    	$this->validate($request,[
+            'name' => 'required|string|max:49|unique:doctors',
+            'sort_msg' => 'required|string|max:149',
+            'category' => 'required|string',
+            'description' => 'required|string',
+            'Money' => 'required|integer',
+            'Office' => 'required|string|max:10',
+            'duty_time' => 'required'
+        ]);
+
+    	$dbVar= new Doctor();
+    	$dbVar->name=$request->name;
+    	$dbVar->sort_msg=$request->sort_msg;
+    	$dbVar->category=$request->category;
+    	$dbVar->description=$request->description;
+    	$dbVar->Money=$request->Money;
+    	$dbVar->Office=$request->Office;
+    	$dbVar->duty_time=$request->duty_time;
+    	$dbVar->save();
+
+    	return "Done";
     }
 
 

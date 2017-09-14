@@ -12,4 +12,8 @@ class Category extends Model
      * @var string
      */
     protected $table = 'categories';
+
+    protected $primaryKey='category';
+    
+    public $incrementing = false;
 }
