@@ -48,7 +48,12 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    @if(Auth::guard('admin')->check())
+                                    {{ Auth::guard('admin')->user()->name }}
+                                    @elseif(Auth::guard('web')->check())
+                                     {{ Auth::guard('web')->user()->fname}}
+                                    @endif
+                                     <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -58,10 +63,16 @@
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
-
+                                        @if(Auth::guard('admin')->check())
+                                            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                        @elseif(Auth::guard('web')->check())
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
+                                        @endif
+                                        
                                     </li>
                                 </ul>
                             </li>
