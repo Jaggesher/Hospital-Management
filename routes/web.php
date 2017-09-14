@@ -16,29 +16,19 @@ Route::get('/', function () {
 });
 
 // Doctors Route
-
-Route::get('/add_doctor',function(){
-	return view('doctor.add-doctor');
-});
-
-Route::get('/show_doc',function(){
-	return view('doctor.view-doctor');
-});
-
-Route::get('/edit_doc',function(){
-	return view('doctor.edit-doctor');
-});
-
-Route::get('/doctors',function(){
-	return view('doctor.doctors');
-});
+Route::get('/doctor/{id}','DoctorController@ViewDoc')->where('id' , '[0-9]+')->name('Doc.View');
+Route::get('/add_doctor','DoctorController@ShowAddDoc')->name('Doc.Add');
+Route::post('/add_doctor','DoctorController@AddDoc')->name('Doc.Add.Submit');
+Route::get('/edit_doctor/{id}','DoctorController@ShowEdit')->where('id' , '[0-9]+')->name('Doc.edit');
+Route::get('/edit_doctor','DoctorController@UpdateInfo')->name('Doc.Edit.Submit');
+Route::post('/Doctor_pic','DoctorController@StorePic')->name('Doc.savePicture');
 
 //Patients Route
 Route::get('/show_patient','patientController@Show')->name('patient.Profile');
 Route::get('/edit_patient','patientController@ShowEdit')->name('patient.edit');
 Route::post('/edit_patient','patientController@UpdateInfo')->name('patient.edit.submit');
-Route::post('change_password','patientController@UpdatePassword')->name('patient.change_password.submit');
-Route::post('patient_pic','patientController@StorePic')->name('patient.savePicture');
+Route::post('/change_password','patientController@UpdatePassword')->name('patient.change_password.submit');
+Route::post('/patient_pic','patientController@StorePic')->name('patient.savePicture');
 
 //Patient Auth Routes
 Auth::routes();
