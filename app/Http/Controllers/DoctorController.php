@@ -18,7 +18,8 @@ class DoctorController extends Controller
 
     public function ViewDoc($id)
     {
-
+    	$dbVar=Doctor::find($id);
+    	return view('doctor.view-doctor')->with('Personal',$dbVar);
     }
 
     public function ShowAddDoc(){
@@ -47,37 +48,39 @@ class DoctorController extends Controller
     	$dbVar->duty_time=$request->duty_time;
     	$dbVar->save();
 
-    	return "Done";
+    	return redirect()->route('Doc.View', ['id' => $dbVar->id]);
     }
 
 
     public function ShowEdit($id){
-    	$id=Auth::user()->id;
-        $dbVar=User::find($id);
-    	return view('patient.edit-patient')->with('Personal',$dbVar);
+        $dbVar=Doctor::find($id);
+        $dbCat=Category::all();
+    	return view('doctor.edit-doctor')->with('Personal',$dbVar)->with('Categories',$dbCat);
     }
 
     public function UpdateInfo(Request $request){
 
-        $this->validate($request,[
-            'fname' => 'required|string|max:20',
-            'lname' => 'required|string|max:20',
-            'gender' => 'required|string',
-            'phone' => 'required|numeric',
-            'age' => 'required|integer',
+       $this->validate($request,[
+            // 'name' => 'required|string|max:49|unique:doctors',
+            'sort_msg' => 'required|string|max:149',
+            'category' => 'required|string',
+            'description' => 'required|string',
+            'Money' => 'required|integer',
+            'Office' => 'required|string|max:10',
+            'duty_time' => 'required'
         ]);
 
-        $id=Auth::user()->id;
-        $dbVar=User::find($id);
-        $dbVar->fname=$request['fname'];
-        $dbVar->lname=$request['lname'];
-        $dbVar->gender=$request['gender'];
-        $dbVar->phone=$request['phone'];
-        $dbVar->age=$request['age'];
-       
+        $dbVar=Doctor::find($request->id);
+        $dbVar->name=$request->name;
+        $dbVar->sort_msg=$request->sort_msg;
+        $dbVar->category=$request->category;
+        $dbVar->description=$request->description;
+        $dbVar->Money=$request->Money;
+        $dbVar->Office=$request->Office;
+        $dbVar->duty_time=$request->duty_time;
         $dbVar->save();
-        
-        return redirect()->route('patient.Profile');
+
+        return redirect()->route('Doc.View', ['id' => $dbVar->id]);
     }
 
     public function StorePic(Request $request){
@@ -86,15 +89,15 @@ class DoctorController extends Controller
         ]);
 
         $file = $request->file('fileToUpload');
-        $id=Auth::user()->id;
-        $dbVar=User::find($id);
+        $id=$request->id;
+        $dbVar=Doctor::find($id);
         $destinationPath="profilePicture";
-        $fileName=$id.'P.'.$file->getClientOriginalExtension();
+        $fileName=$id.'D.'.$file->getClientOriginalExtension();
         $uploadSuccess = $file->move($destinationPath, $fileName);
         if($uploadSuccess){
             $dbVar->img=$destinationPath.'/'.$fileName;
             $dbVar->save();
-            return redirect()->route('patient.Profile');
+            return redirect()->route('Doc.View', ['id' => $dbVar->id]);
         }
         //Here just send a flush message for for someting wrong for storing picture
         $request->session()->flash('wrong', 'Something Went Wrong. Please Try Latter');

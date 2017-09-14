@@ -20,7 +20,7 @@ Route::get('/doctor/{id}','DoctorController@ViewDoc')->where('id' , '[0-9]+')->n
 Route::get('/add_doctor','DoctorController@ShowAddDoc')->name('Doc.Add');
 Route::post('/add_doctor','DoctorController@AddDoc')->name('Doc.Add.Submit');
 Route::get('/edit_doctor/{id}','DoctorController@ShowEdit')->where('id' , '[0-9]+')->name('Doc.edit');
-Route::get('/edit_doctor','DoctorController@UpdateInfo')->name('Doc.Edit.Submit');
+Route::post('/edit_doctor','DoctorController@UpdateInfo')->name('Doc.Edit.Submit');
 Route::post('/Doctor_pic','DoctorController@StorePic')->name('Doc.savePicture');
 
 //Patients Route

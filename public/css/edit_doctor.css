@@ -61,6 +61,10 @@
 	font-weight: bold;
 }
 
+textarea {
+    resize: none;
+}
+
 /*Media query Section.*/
 
 @media (max-width: 768px) {
