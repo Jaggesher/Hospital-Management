@@ -81,11 +81,47 @@
                 </div>
 
                 <div class="col-sm-6 well cls-doc-blog">
-                    <div id="SelectedDoc">
+                    <div id="SelectedDoc clearfix">
+                        <div class=" col-sm-12 pro_head2">
+                            <h4>Doctor's Profile(Selected)</h4>
+                        </div>
+                        <div class="col-sm-12" align="center"> 
+                            <img src="{{ asset('image/RakulPreet.jpg') }}" class="img-thumbnail" alt="Profile Pic" width="200" height="200">
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="pro-info">
+                                <table class="table info_table">
+                                    <tbody>
+                                        <tr>
+                                          <td><strong>Name:</strong></td>
+                                          <td> <strong><a href="#">Rakul Preet</a></strong></td>
+                                        </tr>
+                                        <tr>
+                                          <td>Category:</td>
+                                          <td>Medicine</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Doctor's Office:</td>
+                                          <td>202A</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Time :</td>
+                                          <td>At 12.12AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Total:</td>
+                                          <td>500tk</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        {{-- <br>
                         <br>
                         <br>
-                        <br>
-                        <h3 class="alert alert-success text-center"> No Doctor Selected</h3>
+                        <h3 class="alert alert-success text-center"> No Doctor Selected</h3>   --}}
                     </div>
                 </div>
 
