@@ -31,7 +31,11 @@ Route::post('/edit_patient','patientController@UpdateInfo')->name('patient.edit.
 Route::post('/change_password','patientController@UpdatePassword')->name('patient.change_password.submit');
 Route::post('/patient_pic','patientController@StorePic')->name('patient.savePicture');
 Route::get('/add_serial','patientController@ShowAddSerial')->name('patient.Add.Serial');
-Route::post('/add_serial','patientController@AddSerial')->name('patient.Add.Serial');
+Route::post('/add_serial','patientController@AddSerial')->name('patient.Add.Serial.submit');
+//ajax Routes
+Route::post('/getDoc','patientController@getDoc');
+Route::post('/getDocInfo','patientController@getDocInfo');
+Route::post('/getdates','patientController@getDates');
 
 //Patient Auth Routes
 Auth::routes();

@@ -8,7 +8,8 @@
 
 @section('OuterInclude')
     <link href="{{ asset('css/serial_add.css') }}" rel="stylesheet">
-   {{--  <script src="{{ asset('js/edit_patient.js') }}"></script> --}}
+    {{-- <script src="{{ asset('js/serial_add.js') }}"></script> --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 @endsection
 
 
@@ -26,50 +27,59 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">Select Doctor.</div>
                         <div class="panel-body">
-                            <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                            <form class="form-horizontal" method="POST" action="{{ route('patient.Add.Serial.submit') }}">
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="category" class="col-md-2 control-label">Category</label>
 
                                     <div class="col-md-10">
-                                        <select id="category" class="form-control" autofocus="">
-                                            <option value="A">A</option>
-                                            <option value="A">B</option>
-                                            <option value="A">C</option>
-                                            <option value="A">D</option>
+                                        <select id="category" class="form-control" autofocus="" name="category">
+                                            <option value="" disabled selected hidden>Select Category.</option>
+                                            @foreach($Categories as $category)
+                                                <option value="{{$category->category}}">{{$category->category}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="category" class="col-md-2 control-label">Doctor</label>
+                                    <label for="doctor" class="col-md-2 control-label">Doctor</label>
 
                                     <div class="col-md-10">
-                                        <select id="category" class="form-control" autofocus="">
-                                            <option value="A">A</option>
-                                            <option value="A">B</option>
-                                            <option value="A">C</option>
-                                            <option value="A">D</option>
+                                        <select id="doctor" class="form-control" name="doctor">
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="category" class="col-md-2 control-label">Date's</label>
+                                    <label for="date" class="col-md-2 control-label">Date's</label>
 
                                     <div class="col-md-10">
-                                        <select id="category" class="form-control" autofocus="">
-                                            <option value="A">A</option>
-                                            <option value="A">B</option>
-                                            <option value="A">C</option>
-                                            <option value="A">D</option>
+                                        <select id="date" class="form-control" name="date">
                                         </select>
                                     </div>
                                 </div>
+
+
+                                 <div class="form-group">
+                                    <label for="Payment" class="col-md-2 control-label">Payment</label>
+                                    <div class="col-md-10">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio" checked>BIKASH
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio">DBBL
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio">OTHER
+                                        </label>
+                                    </div>
+                                </div>
+
 
                                 <div class="form-group">
                                     <div class="col-md-8 col-md-offset-2">
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit" class="btn btn-primary" id="BookNow">
                                             Book Now
                                         </button>
                                     </div>
@@ -80,52 +90,86 @@
                     </div>
                 </div>
 
-                <div class="col-sm-6 well cls-doc-blog">
-                    <div id="SelectedDoc clearfix">
-                        <div class=" col-sm-12 pro_head2">
-                            <h4>Doctor's Profile(Selected)</h4>
-                        </div>
-                        <div class="col-sm-12" align="center"> 
-                            <img src="{{ asset('image/RakulPreet.jpg') }}" class="img-thumbnail" alt="Profile Pic" width="200" height="200">
-                        </div>
-
-                        <div class="col-sm-12">
-                            <div class="pro-info">
-                                <table class="table info_table">
-                                    <tbody>
-                                        <tr>
-                                          <td><strong>Name:</strong></td>
-                                          <td> <strong><a href="#">Rakul Preet</a></strong></td>
-                                        </tr>
-                                        <tr>
-                                          <td>Category:</td>
-                                          <td>Medicine</td>
-                                        </tr>
-                                        <tr>
-                                          <td>Doctor's Office:</td>
-                                          <td>202A</td>
-                                        </tr>
-                                        <tr>
-                                          <td>Time :</td>
-                                          <td>At 12.12AM</td>
-                                        </tr>
-                                        <tr>
-                                          <td>Total:</td>
-                                          <td>500tk</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        {{-- <br>
+                <div class="col-sm-6 ">
+                    <div id="SelectedDoc" class="well cls-doc-blog clearfix">
                         <br>
                         <br>
-                        <h3 class="alert alert-success text-center"> No Doctor Selected</h3>   --}}
+                        <br>
+                        <h3 class="alert alert-success text-center"> No Doctor Selected</h3>  
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#BookNow").hide();
+            $( "#category" ).change(function() {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                $("#BookNow").fadeOut('slow');
+
+                $("#SelectedDoc").html('<div align="center" ><br><br><div class="loader"></div></div>');
+
+                $.ajax({
+                    type:'POST',
+                    url:'<?php echo url('getDoc'); ?>',
+                    data:{ category : $('#category option:selected').val() },
+                    success:function(data){
+                        $("#doctor").html(data);
+                   }
+                });
+
+                $("#SelectedDoc").html('<br> <br> <br> <h3 class="alert alert-success text-center"> No Doctor Selected</h3>');
+                $("#date").html('');
+
+            });
+
+            $( "#doctor" ).change(function() {
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                $("#BookNow").fadeOut('slow');
+
+                $("#SelectedDoc").html('<div align="center" ><br><br><div class="loader"></div></div>');
+                //retrive Dates
+                $.ajax({
+                    type:'POST',
+                    url:'<?php echo url('getdates'); ?>',
+                    data:{ id : $('#doctor option:selected').val() },
+                    success:function(data){
+                        $("#date").html(data);
+                    }
+                });
+
+                //Retrive Doctr's Info
+                $.ajax({
+                    type:'POST',
+                    url:'<?php echo url('getDocInfo'); ?>',
+                    data:{ id : $('#doctor option:selected').val() },
+                    success:function(data){
+                        $("#SelectedDoc").html(data);
+                    }
+                });
+            });
+
+            $( "#date" ).change(function() {
+                $("#BookNow").fadeIn('slow');
+            });
+
+        });
+
+    </script>
 @endsection 

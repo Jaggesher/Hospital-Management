@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\User;
 Use Auth;
 Use Hash;
+use App\Category;
+use App\Doctor;
+use App\Date;
+use App\Serial;
 
 class patientController extends Controller
 {
@@ -74,7 +78,7 @@ class patientController extends Controller
     }
 
     public function StorePic(Request $request){
-    	 $this->validate($request,[
+    	$this->validate($request,[
             'fileToUpload' => 'required|image|mimes:jpeg,jpg,png|max:2500',
         ]);
 
@@ -96,11 +100,61 @@ class patientController extends Controller
     }
 
     public function ShowAddSerial(){
-        return view('patient.give-serial');
+        $dbVar=Category::all();
+        return view('patient.give-serial')->with('Categories',$dbVar);
     }
 
     public function AddSerial(Request $request){
+        $date=date("Y-m-d");
+        $this->validate($request,[
+            'category' => 'required|string',
+            'doctor'  => 'required',
+            'date'   =>'required',
+        ]);
+
+        $Position=Serial::where('serial_date',$request->date)->count();
+
+        $code=(string)(rand()%1000);
+        $code.=(string)(rand()%1000);
+        $code.=(string)(rand()%1000);
+
+        $dbVar=new Serial();
+        $dbVar->serial_date=$request->date;
+        $dbVar->position=$Position+1;
+        $dbVar->patient=Auth::user()->id;
+        $dbVar->code=$code;
+        $dbVar->save();
+
+        return redirect()->route('patient.Profile');
 
     }
 
+    public function getDoc(Request $request){
+        $dbVar=Doctor::where('category','=',$request->category)->get();
+
+        $data='<option value="" disabled selected hidden>Select Category.</option> ';
+        foreach ($dbVar as $var) {
+            $data.=' <option value="'.$var->id.'">'.$var->name.'.</option>';
+        }
+        return $data;
+    }
+
+    public function getDocInfo( Request $request){
+        $dbVar=Doctor::find($request->id);
+
+        return view('ajaxViews.doctor')->with('Personal',$dbVar);;
+    }
+
+    public function getDates( Request $request){
+        $date=date("Y-m-d");
+        $dbVar=Date::where('doctor',$request->id)->orderBy('id', 'desc')->get();
+        $data='<option value="" disabled selected hidden>Select Date.</option> ';
+        foreach ($dbVar as $var) {
+            if($date <= $var->serial_date){
+                $data.=' <option value="'.$var->id.'">'.$var->serial_date.'.</option>';
+            }
+            
+        }
+        return $data;
+    }
 }
