@@ -73,7 +73,7 @@
                 <!--Left navigation start -->
                 <ul class="nav navbar-nav my-menu">
                     <li class="Home"><i class="fa fa-list-alt"></i><a href="/">Home</a></li>
-                    <li class="DoctorList"><i class="fa fa-list-alt"></i><a href="{{-- {{route('')}} --}}">Our Doctor's</a></li>
+                    <li class="DoctorList"><i class="fa fa-list-alt"></i><a href="{{route('Doctors')}}">Our Doctor's</a></li>
 
                     @if(Auth::guard('admin')->check())
                         <li class="AddDoctor"><i class="fa fa-list-alt"></i><a href="{{route('Doc.Add')}}">Add Doctor</a></li>

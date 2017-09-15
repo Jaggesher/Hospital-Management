@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('Home.home');
-});
+Route::get('/', 'GenerelController@index')->name('home');
 
 // Doctors Route
 Route::get('/doctor/{id}','DoctorController@ViewDoc')->where('id' , '[0-9]+')->name('Doc.View');
@@ -24,6 +22,11 @@ Route::post('/edit_doctor','DoctorController@UpdateInfo')->name('Doc.Edit.Submit
 Route::post('/Doctor_pic','DoctorController@StorePic')->name('Doc.savePicture');
 Route::post('/add_date','DoctorController@AddDate')->name('Doc.Add.Date');
 
+
+Route::get('/doctors','GenerelController@ShowDoctors')->name('Doctors');
+Route::post('/doctors','GenerelController@Doctors');
+
+
 //Patients Route
 Route::get('/show_patient','patientController@Show')->name('patient.Profile');
 Route::get('/edit_patient','patientController@ShowEdit')->name('patient.edit');
@@ -32,10 +35,14 @@ Route::post('/change_password','patientController@UpdatePassword')->name('patien
 Route::post('/patient_pic','patientController@StorePic')->name('patient.savePicture');
 Route::get('/add_serial','patientController@ShowAddSerial')->name('patient.Add.Serial');
 Route::post('/add_serial','patientController@AddSerial')->name('patient.Add.Serial.submit');
+
+
 //ajax Routes
 Route::post('/getDoc','patientController@getDoc');
 Route::post('/getDocInfo','patientController@getDocInfo');
 Route::post('/getdates','patientController@getDates');
+
+
 
 //Patient Auth Routes
 Auth::routes();

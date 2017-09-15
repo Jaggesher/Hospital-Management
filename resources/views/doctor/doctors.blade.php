@@ -8,7 +8,8 @@
 
 @section('OuterInclude')
     <link href="{{ asset('css/doctors.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/doctors.js') }}"></script>
+    {{-- <script src="{{ asset('js/doctors.js') }}"></script> --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 @endsection
 
 
@@ -22,10 +23,10 @@
             <div class="form-group">
                 <div class="col-lg-12">
                     <select id="category" class="form-control">
-                        <option value="A">A</option>
-                        <option value="A">B</option>
-                        <option value="A">C</option>
-                        <option value="A">D</option>
+                        <option value="" disabled selected hidden>Select Category.</option>
+                        @foreach($Categories as $category)
+                            <option value="{{$category->category}}">{{$category->category}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -33,6 +34,39 @@
     </div>
 
     <div class="container" id="DoctorsList">
-         <h4 class="alert alert-success text-center">here Come Doctors List, According to Category. By ajax</h4>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 class="alert alert-success text-center">Choose Category Of Doctos.</h1>
     </div>
+
+
+     <script type="text/javascript">
+        $(document).ready(function(){
+
+            $( "#category" ).change(function() {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                $("#DoctorsList").html('<div align="center" ><br><br><br><br><br><div class="loader"></div></div>');
+
+                $.ajax({
+                    type:'POST',
+                    url:'<?php echo url('doctors'); ?>',
+                    data:{ category : $('#category option:selected').val() },
+                    success:function(data){
+                        // alert(data);
+                        $("#DoctorsList").html(data);
+                   }
+                });
+            });
+
+        });
+
+    </script>
+
 @endsection 
