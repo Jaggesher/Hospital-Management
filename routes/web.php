@@ -30,6 +30,8 @@ Route::get('/edit_patient','patientController@ShowEdit')->name('patient.edit');
 Route::post('/edit_patient','patientController@UpdateInfo')->name('patient.edit.submit');
 Route::post('/change_password','patientController@UpdatePassword')->name('patient.change_password.submit');
 Route::post('/patient_pic','patientController@StorePic')->name('patient.savePicture');
+Route::post('/add_serial','patientController@ShowAddSerial')->name('patient.Add.Serial');
+Route::post('/add_serial','patientController@AddSerial')->name('patient.Add.Serial');
 
 //Patient Auth Routes
 Auth::routes();
