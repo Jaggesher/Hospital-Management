@@ -12,6 +12,10 @@
 	font-size: 30px;
 }
 
+.cls-doc-blog{
+	min-height: 270px;
+}
+
 /*Media query Section.*/
 
 @media (max-width: 768px) {
