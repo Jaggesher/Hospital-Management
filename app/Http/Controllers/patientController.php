@@ -95,5 +95,12 @@ class patientController extends Controller
         return redirect()->back();
     }
 
+    public function ShowAddSerial(){
+        return view('patient.give-serial');
+    }
+
+    public function AddSerial(Request $request){
+
+    }
 
 }
