@@ -25,7 +25,7 @@ class AdminLoginController extends Controller
         ]);
 
     	if(Auth::guard('admin')->attempt(['email' => $request->email,'password' => $request->password],$request->remember)){
-			return redirect('/home');
+			return redirect('/');
     	}
 
        // $request->session()->flash('admin_no_match', 'These credentials do not match our records.');
