@@ -72,7 +72,7 @@
 			<h2 class="pull-right"><button id="addDateBtn" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></button></h2>	
 			</div>
 
-			<div class="col-md-8 col-sm-offset-2" id="addDateBlock" @if(count($errors) == 0) style = "display:none;" @endif>
+			<div class="col-md-8 col-sm-offset-2" id="addDateBlock" @if(count($errors) == 0 && !Session::has('Already_added')) style = "display:none;" @endif>
                 <div class="panel panel-default">
                     <div class="panel-heading">Add Another Date.</div>
                     <div class="panel-body">
@@ -81,7 +81,7 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
              				<input type="hidden" name="doctor" value="{{$Personal->id}}">
 
-                            <div class="form-group{{ $errors->has('serial_date') ? ' has-error' : '' }}">
+                            <div class="form-group{{ $errors->has('serial_date') || Session::has('Already_added') ? ' has-error' : '' }}">
                                 <label for="serial_date" class="col-md-4 control-label">Enter Date</label>
 
                                 <div class="col-md-6">
@@ -92,6 +92,13 @@
                                             <strong>{{ $errors->first('serial_date') }}</strong>
                                         </span>
                                     @endif
+
+                                    @if (Session::has('Already_added'))
+                                        <span class="help-block">
+                                             <strong> {{ Session::get('Already_added') }}</strong>
+                                        </span>
+                                    @endif
+
                                 </div>
                             </div>
 

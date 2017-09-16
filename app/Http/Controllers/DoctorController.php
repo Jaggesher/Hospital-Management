@@ -113,11 +113,19 @@ class DoctorController extends Controller
         $this->validate($request,[
             'serial_date' => 'required|date|date_format:Y-m-d|after_or_equal:'.$date,
         ]);
-        $dbVar=new Date();
-        $dbVar->serial_date= $request->serial_date;
-        $dbVar->doctor= $request->doctor;
-        $dbVar->save();
-        return redirect()->route('Doc.View', ['id' => $dbVar->doctor]);
+        $dbVar=Date::where('serial_date',$request->serial_date)->where('doctor',$request->doctor)->first();
+            if(!count($dbVar)){
+                $dbVar=new Date();
+                $dbVar->serial_date= $request->serial_date;
+                $dbVar->doctor= $request->doctor;
+                $dbVar->save();
+                return redirect()->route('Doc.View', ['id' => $dbVar->doctor]);   
+            }
+           
+
+        $request->session()->flash('Already_added', 'You Already added the date, Choose other.');
+
+        return redirect()->back();
 
     }
 
