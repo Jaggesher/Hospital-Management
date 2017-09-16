@@ -8,6 +8,7 @@ use App\Category;
 use App\Doctor;
 use App\User;
 use App\Date;
+use App\Serial;
 
 class DoctorController extends Controller
 {
@@ -20,7 +21,7 @@ class DoctorController extends Controller
     public function ViewDoc($id)
     {
     	$dbVar=Doctor::find($id);
-        $dbVar2=Date::where('doctor',$id)->orderBy('id', 'desc')->get();
+        $dbVar2=Date::where('doctor',$id)->orderBy('id', 'desc')->with('Number')->get();
     	return view('doctor.view-doctor')->with('Personal',$dbVar)->with('Dates',$dbVar2);
     }
 

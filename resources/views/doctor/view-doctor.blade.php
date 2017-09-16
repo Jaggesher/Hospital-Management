@@ -130,7 +130,7 @@
 		      	@foreach($Dates as $date)
 		      		 <tr>
 			          <td>{{$date->serial_date}}</td>
-			          <td>n</td>
+			          <td>{{count($date->Number)}}</td>
 			          <td><a href="#"> <span class="glyphicon glyphicon-print"></span></a></td>
 			        </tr>
 		      	@endforeach
