@@ -131,8 +131,24 @@ class DoctorController extends Controller
     }
 
     public function ShowPdf($id){
-        $dbVar=Serial::select('patient','position','code')->where('serial_date',$id)->orderBy('id', 'desc')->with('Patients')->get();
-        return $dbVar;
+        $dbVar=Serial::select('patient','position','code')->where('serial_date',$id)->orderBy('position')->with('Patients')->get();
+
+        //$dbVar2=Date::select()->with('Doctor')->find($id);
+
+        $dbVar1=Date::find($id);
+        $dbVar2=Doctor::select('name','category')->find($dbVar1->doctor);
+        
+
+        $data = [
+            'Doctor' => $dbVar2,
+            'Date' =>$dbVar1,
+            'Patients' => $dbVar
+        ];
+
+        $pdf = PDF::loadView('pdf.serialList', $data);
+        return $pdf->stream('serialList.pdf');
+
+        //return view('pdf.serialList')->with('Doctor',$dbVar2)->with('Date',$dbVar1)->with('Patients',$dbVar);
     }
 
 }
