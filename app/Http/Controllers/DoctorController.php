@@ -131,7 +131,8 @@ class DoctorController extends Controller
     }
 
     public function ShowPdf($id){
-        return "Yesss";
+        $dbVar=Serial::select('patient','position','code')->where('serial_date',$id)->orderBy('id', 'desc')->with('Patients')->get();
+        return $dbVar;
     }
 
 }
