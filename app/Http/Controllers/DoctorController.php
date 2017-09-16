@@ -130,4 +130,8 @@ class DoctorController extends Controller
 
     }
 
+    public function ShowPdf($id){
+        return "Yesss";
+    }
+
 }

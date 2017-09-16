@@ -131,7 +131,7 @@
 		      		 <tr>
 			          <td>{{$date->serial_date}}</td>
 			          <td>{{count($date->Number)}}</td>
-			          <td><a href="#"> <span class="glyphicon glyphicon-print"></span></a></td>
+			          <td><a href="{{ route('Doc.pdf', ['id' => $date->id]) }}"> <span class="glyphicon glyphicon-print"></span></a></td>
 			        </tr>
 		      	@endforeach
 
