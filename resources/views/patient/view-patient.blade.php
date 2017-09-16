@@ -74,39 +74,15 @@
           </thead>
 
           <tbody>
-            <tr>
-                <td>18/09/2017</td>
-                <td><a href="#">SK bauliya</a></td>
-                <td>1</td>
-                <td>112312312321</td>
-            </tr>
+            @foreach($Activity as $val)
+              <tr>
+                <td>{{$val->date->serial_date}}</td>
+                <td><a style=" color:black;" href="{{route('Doc.View', ['id' => $val->date->doctor])}}">Related Doctor</a></td>
+                <td>{{$val->position}}</td>
+                <td>{{$val->code}}</td>
+              </tr>
+            @endforeach
 
-            <tr>
-                <td>18/09/2017</td>
-                <td><a href="#">SK bauliya</a></td>
-                <td>1</td>
-                <td>112312312321</td>
-            </tr>
-            <tr>
-                <td>18/09/2017</td>
-                <td><a href="#">SK bauliya</a></td>
-                <td>1</td>
-                <td>112312312321</td>
-            </tr>
-            <tr>
-                <td>18/09/2017</td>
-                <td><a href="#">SK bauliya</a></td>
-                <td>1</td>
-                <td>112312312321</td>
-            </tr>
-            <tr>
-                <td>18/09/2017</td>
-                <td><a href="#">SK bauliya</a></td>
-                <td>1</td>
-                <td>112312312321</td>
-            </tr>
-
-            
           </tbody>
 
         </table>

@@ -22,7 +22,8 @@ class patientController extends Controller
     public function Show(){
     	$id=Auth::user()->id;
         $dbVar=User::find($id);
-    	return view('patient.view-patient')->with('Personal',$dbVar);
+        $dbVar2=Serial::select('position','code','serial_date')->where('patient',$id)->orderBy('id', 'desc')->with('Date')->get();
+    	return view('patient.view-patient')->with('Personal',$dbVar)->with('Activity',$dbVar2);
     }
 
     public function ShowEdit(){
