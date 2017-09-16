@@ -11,7 +11,7 @@
             <tbody>
                 <tr>
                   <td><strong>Name:</strong></td>
-                  <td> <strong><a href="{{ route('Doc.View', ['id' => $Personal->id]) }}">{{$Personal->name}}t</a></strong></td>
+                  <td> <strong><a href="{{ route('Doc.View', ['id' => $Personal->id]) }}">{{$Personal->name}}</a></strong></td>
                 </tr>
                 <tr>
                   <td>Category:</td>

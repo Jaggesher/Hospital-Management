@@ -10,7 +10,7 @@
                 </div>
                 <!--right navigation start -->
                 <div class="navbar-header pull-right customizeNavbarHeader">
-                    @if (Auth::guest())
+                    @if (Auth::guest() && !Auth::guard('admin')->check())
                         <a class = "navbar-brand top-menu" href="{{ route('login') }}">Login</a>
                         <a class = "navbar-brand top-menu" href="{{ route('register') }}">Register</a>
                     @else
