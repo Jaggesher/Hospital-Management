@@ -27,11 +27,7 @@ class CategoriesTableSeeder extends Seeder
         DB::table('categories')->insert([
             'category' => 'Dentist',
         ]);
-
-        DB::table('categories')->insert([
-            'category' => ' Dermatologist',
-        ]);
-
+        
         DB::table('categories')->insert([
             'category' => 'Gynecologist',
         ]);

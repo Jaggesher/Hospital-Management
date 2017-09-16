@@ -150,7 +150,8 @@ class patientController extends Controller
         $dbVar=Date::where('doctor',$request->id)->orderBy('id', 'desc')->get();
         $data='<option value="" disabled selected hidden>Select Date.</option> ';
         foreach ($dbVar as $var) {
-            if($date <= $var->serial_date){
+            $dbVar2=Serial::where('serial_date',$var->id)->where('patient',Auth::user()->id)->first();
+            if($date <= $var->serial_date && count($dbVar2)==0){
                 $data.=' <option value="'.$var->id.'">'.$var->serial_date.'.</option>';
             }
             
