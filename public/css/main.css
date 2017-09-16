@@ -260,6 +260,39 @@ header .navbar-default .top-menu:hover{
 .statement .content p {
   padding: 0px 90px;
 }
+
+.contain>img{
+  object-fit: cover;
+  
+}
+.statement1 .content h1{
+  font-size: 45px;
+  margin:0;
+  padding: 0;
+  margin-bottom: 5px;
+}
+.statement1 .content p{
+  font-size: 18px;
+  font-weight: bold;
+}
+.statement1{
+  height: 500px;
+  width: 100%;
+  background-image: url('/img/parallex2.jpg');
+  background-color: rgba(255,0,0,0.2);
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.statement1 .content h1 {
+  padding-top: 170px;
+}
+.statement1 .content p {
+  padding: 0px 90px;
+}
 @media(max-width:640px)
 {
 

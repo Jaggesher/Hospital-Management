@@ -35,46 +35,52 @@
             </a>
     </div>
     <hr>
+     <div class="statement1">
+        <div>
+            <div class="content">
+                <h1>Some Text Here</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam atque recusandae, veniam necessitatibus vitae unde. Possimus iste, debitis corporis sed quisquam tempore accusantium. Magni voluptate et quo odio quibusdam obcaecati.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam atque recusandae, veniam necessitatibus vitae unde. Possimus iste, debitis corporis sed quisquam tempore accusantium. Magni voluptate et quo odio quibusdam obcaecati.
+                </p>
+            </div>
+        </div>
+    </div>
     <div class="contain">
         <div class="row">
             <div class="col-sm-3">
                 <div class="card">
-                    <img src="{{ asset('img/1.jpg') }}" alt="Image">
+                    <img src="{{ asset('img/card-1.jpg') }}" alt="Image">
                     <div class="contains">
-                        <h4 class="name">Mister Modu</h4>
+                        <h4 class="name">Some Text Here</h4>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat adipisci sit eos dolorum fugiat. Pariatur cupiditate repellat odit assumenda explicabo iusto tempora eaque vitae itaque, aperiam recusandae quibusdam dolores laudantium?</p>
-                        <button type="button" class="btn btn-success">Success</button>
                     </div>
                 </div>
             </div>  
             <div class="col-sm-3">
                 <div class="card">
-                    <img src="{{ asset('img/1.jpg') }}" alt="Image">
+                    <img src="{{ asset('img/card-2.jpg') }}" alt="Image">
                     <div class="contains">
-                        <h4 class="name">Mister Modu</h4>
+                        <h4 class="name">Some Text Here</h4>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat adipisci sit eos dolorum fugiat. Pariatur cupiditate repellat odit assumenda explicabo iusto tempora eaque vitae itaque, aperiam recusandae quibusdam dolores laudantium?</p>
-                        <button type="button" class="btn btn-success">Success</button>
                     </div>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="card">
-                    <img src="{{ asset('img/1.jpg') }}" alt="Image">
+                    <img src="{{ asset('img/card-3.jpg') }}" alt="Image">
                     <div class="contains">
-                        <h4 class="name">Mister Modu</h4>
+                        <h4 class="name">Some Text Here</h4>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat adipisci sit eos dolorum fugiat. Pariatur cupiditate repellat odit assumenda explicabo iusto tempora eaque vitae itaque, aperiam recusandae quibusdam dolores laudantium?</p>
-                        <button type="button" class="btn btn-success">Success</button>
                     </div>
                 </div>
             </div>
 
                <div class="col-sm-3">
                     <div class="card">
-                        <img src="{{ asset('img/1.jpg') }}" alt="Image">
+                        <img src="{{ asset('img/card-4.jpg') }}" alt="Image">
                         <div class="contains">
-                            <h4 class="name">Mister Modu</h4>
+                            <h4 class="name">Some Text Here</h4>
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat adipisci sit eos dolorum fugiat. Pariatur cupiditate repellat odit assumenda explicabo iusto tempora eaque vitae itaque, aperiam recusandae quibusdam dolores laudantium?</p>
-                            <button type="button" class="btn btn-success">Success</button>
                         </div>
                     </div>
                 </div>
