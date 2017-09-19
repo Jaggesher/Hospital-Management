@@ -26,7 +26,7 @@
 		<div class="row">
 			<div class="col-sm-3" align="center"> 
 				<img src="{{ asset($Personal->img) }}" class="img-thumbnail" alt="Profile Pic" width="200" height="200">
-				<p class="cls_sort_msg"> Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum.</p>
+				<p class="cls_sort_msg"> {{$Personal->sort_msg}}</p>
 			</div>
 			<div class="col-sm-9">
 				<div class="pro-info">

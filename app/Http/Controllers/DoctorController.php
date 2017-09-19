@@ -9,6 +9,7 @@ use App\Doctor;
 use App\User;
 use App\Date;
 use App\Serial;
+use PDF;
 
 class DoctorController extends Controller
 {
@@ -136,7 +137,7 @@ class DoctorController extends Controller
         //$dbVar2=Date::select()->with('Doctor')->find($id);
 
         $dbVar1=Date::find($id);
-        $dbVar2=Doctor::select('name','category')->find($dbVar1->doctor);
+        $dbVar2=Doctor::select('name','category','img')->find($dbVar1->doctor);
         
 
         $data = [
@@ -145,10 +146,10 @@ class DoctorController extends Controller
             'Patients' => $dbVar
         ];
 
-        $pdf = PDF::loadView('pdf.serialList', $data);
-        return $pdf->stream('serialList.pdf');
+        // $pdf = PDF::loadView('pdf.serialList', $data);
+        // return $pdf->stream('serialList.pdf');
 
-        //return view('pdf.serialList')->with('Doctor',$dbVar2)->with('Date',$dbVar1)->with('Patients',$dbVar);
+        return view('pdf.serialList')->with('Doctor',$dbVar2)->with('Date',$dbVar1)->with('Patients',$dbVar);
     }
 
 }

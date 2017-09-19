@@ -60,7 +60,7 @@
 			<div class="well">
 				<div align="center">
 					
-					<img src="{{ asset('image/RakulPreet.jpg') }}" class="img-thumbnail" alt="Profile Pic" width="200" height="200">
+					<img src="{{ asset($Doctor->img) }}" class="img-thumbnail" alt="Profile Pic" width="200" height="200">
 					<div class="docInfo">
 						<h2> <strong><i>Name: </i></strong>{{$Doctor->name}}</h2>
 						<h3><strong><i>Category: </i></strong>{{$Doctor->category}}</h3>
