@@ -9,7 +9,7 @@
 @section('OuterInclude')
     <link href="{{ asset('css/serial_add.css') }}" rel="stylesheet">
     {{-- <script src="{{ asset('js/serial_add.js') }}"></script> --}}
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    {{--<meta name="csrf-token" content="{{ csrf_token() }}" />--}}
 @endsection
 
 
@@ -28,7 +28,7 @@
                         <div class="panel-heading">Select Doctor.</div>
                         <div class="panel-body">
                             <form class="form-horizontal" method="POST" action="{{ route('patient.Add.Serial.submit') }}">
-                                {{ csrf_field() }}
+                                <input type="hidden" name="_token" id="csrf" value="{{csrf_token()}}">
                                 <div class="form-group">
                                     <label for="category" class="col-md-2 control-label">Category</label>
 
@@ -109,11 +109,7 @@
         $(document).ready(function(){
             $("#BookNow").hide();
             $( "#category" ).change(function() {
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
+
 
                 $("#BookNow").fadeOut('slow');
 
@@ -122,7 +118,7 @@
                 $.ajax({
                     type:'POST',
                     url:'<?php echo url('getDoc'); ?>',
-                    data:{ category : $('#category option:selected').val() },
+                    data:{ category : $('#category option:selected').val(),_token :$('#csrf').val() },
                     success:function(data){
                         $("#doctor").html(data);
                    }
@@ -135,11 +131,6 @@
 
             $( "#doctor" ).change(function() {
 
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
 
                 $("#BookNow").fadeOut('slow');
 
@@ -148,7 +139,7 @@
                 $.ajax({
                     type:'POST',
                     url:'<?php echo url('getdates'); ?>',
-                    data:{ id : $('#doctor option:selected').val() },
+                    data:{ id : $('#doctor option:selected').val(),_token :$('#csrf').val() },
                     success:function(data){
                         $("#date").html(data);
                     }
@@ -158,7 +149,7 @@
                 $.ajax({
                     type:'POST',
                     url:'<?php echo url('getDocInfo'); ?>',
-                    data:{ id : $('#doctor option:selected').val() },
+                    data:{ id : $('#doctor option:selected').val(),_token :$('#csrf').val() },
                     success:function(data){
                         $("#SelectedDoc").html(data);
                     }

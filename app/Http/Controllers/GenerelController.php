@@ -34,7 +34,6 @@ class GenerelController extends Controller
 			                <h5>'.$Personal->sort_msg .'</h5>
 			                <div class="mem_btn_div">
 			                    <form role="form" method="get" action="'.route('Doc.View', ['id' => $Personal->id]).'">
-			                        <input type="hidden" name="_token" value="{{csrf_token()}}">
 			                        <input type="hidden" name="id" value="'.$Personal->id.'">
 			                        <button name="action" value="accept" class="btn btn-default btn-md" type="submit" data-toggle="tooltip" data-placement="bottom" title="View" ><i class="glyphicon glyphicon-eye-open"></i></button>
 			                    </form>     

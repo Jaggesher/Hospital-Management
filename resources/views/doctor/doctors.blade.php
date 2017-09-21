@@ -9,7 +9,6 @@
 @section('OuterInclude')
     <link href="{{ asset('css/doctors.css') }}" rel="stylesheet">
     {{-- <script src="{{ asset('js/doctors.js') }}"></script> --}}
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
 @endsection
 
 
@@ -22,6 +21,7 @@
         <div class="col-sm-8 col-sm-offset-2">
             <div class="form-group">
                 <div class="col-lg-12">
+                    <input type="hidden" name="_token" id="csrf" value="{{csrf_token()}}">
                     <select id="category" class="form-control">
                         <option value="" disabled selected hidden>Select Category.</option>
                         @foreach($Categories as $category)
@@ -46,18 +46,12 @@
         $(document).ready(function(){
 
             $( "#category" ).change(function() {
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-
                 $("#DoctorsList").html('<div align="center" ><br><br><br><br><br><div class="loader"></div></div>');
 
                 $.ajax({
                     type:'POST',
                     url:'<?php echo url('doctors'); ?>',
-                    data:{ category : $('#category option:selected').val() },
+                    data:{ category : $('#category option:selected').val(),_token :$('#csrf').val() },
                     success:function(data){
                         // alert(data);
                         $("#DoctorsList").html(data);
