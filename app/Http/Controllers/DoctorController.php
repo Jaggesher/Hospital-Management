@@ -9,7 +9,7 @@ use App\Doctor;
 use App\User;
 use App\Date;
 use App\Serial;
-use PDF;
+//use PDF;
 
 class DoctorController extends Controller
 {

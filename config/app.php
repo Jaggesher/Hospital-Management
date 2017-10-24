@@ -180,7 +180,7 @@ return [
         /*
          * PDF Wrapper
          */
-        niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
+       // niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
 
     ],
 
@@ -233,7 +233,7 @@ return [
          /*
          * PDF Wrapper
          */
-        'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class,
+        //'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class,
 
     ],
 
